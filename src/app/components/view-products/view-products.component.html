@@ -9,7 +9,7 @@
         <tbody class="product-table">
             <tr *ngFor="let product of products" (click)="selectProduct(product)">
                 <td>{{ product.name }}</td>
-                <td>{{ product.price }}</td>
+                <td>{{ product.price | currency }}</td>
             </tr>
         </tbody>
     </table>

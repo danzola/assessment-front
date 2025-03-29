@@ -1,1 +1,16 @@
-<p>view-customers works!</p>
+<div class="form-container" *ngIf="searchVisible">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody class="product-table">
+            <tr *ngFor="let customer of customers" (click)="selectCustomer(customer)">
+                <td>{{ customer.firstName }} {{ customer.lastName }}</td>
+                <td>{{ customer.email }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

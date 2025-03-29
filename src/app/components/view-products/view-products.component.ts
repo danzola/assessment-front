@@ -1,6 +1,7 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductsService } from '../../services/products.service';
+import { ActivatedRoute } from '@angular/router'; 
 
 @Component({
   selector: 'app-view-products',
@@ -13,9 +14,15 @@ export class ViewProductsComponent implements OnInit {
   products: any[] = [];
   searchVisible: boolean = false;
 
-  constructor(private productService: ProductsService) {}
+  constructor(private productService: ProductsService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
+    this.route.paramMap.subscribe(params => {
+      if (params.get('visible') === 'true') {
+        this.searchVisible = true;
+      }
+    });
+
     this.productService.getAll().subscribe((data: any) => {
       this.products = data;
     });

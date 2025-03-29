@@ -3,7 +3,7 @@
 
     <div>
         <label for="customer">Customer:</label>
-        <input id="customer" [(ngModel)]="order.customerId" />
+        <input id="customer" [(ngModel)]="order.customerId" placeholder="Search customer" (click)="searchCustomers()"/>
     </div>
 
     <div>
@@ -19,3 +19,4 @@
     <button (click)="submitOrder()">Submit Order</button>
 </div>
 <app-view-products></app-view-products>
+<app-view-customers></app-view-customers>

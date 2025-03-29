@@ -1,14 +1,14 @@
 import { Routes } from '@angular/router';
 import { CreateOrderComponent } from './components/create-order/create-order.component';
-import { ViewOrdersComponent } from './components/view-orders/view-orders.component';
+import { ViewProductsComponent } from './components/view-products/view-products.component';
 
 export const routes: Routes = [
     {
-        path: 'create-order',
+        path: 'orders',
         component: CreateOrderComponent
     },
     {
-        path: 'view-orders',
-        component: ViewOrdersComponent
+        path: 'products/:visible',
+        component: ViewProductsComponent
     }
 ];
