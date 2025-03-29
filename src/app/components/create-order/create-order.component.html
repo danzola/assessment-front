@@ -1,1 +1,21 @@
-<p>create-order works!</p>
+<h1>Create new order:</h1>
+<div *ngIf="createOrder">
+
+    <div>
+        <label for="customer">Customer:</label>
+        <input id="customer" [(ngModel)]="order.customerId" />
+    </div>
+
+    <div>
+        <label for="product">Product:</label>
+        <input id="product" [(ngModel)]="order.productId" placeholder="Search product" (click)="searchProduct()">
+    </div>
+
+    <div>
+        <label for="quantity">Quantity:</label>
+        <input id="quantity" type="number" [(ngModel)]="order.quantity"/>
+    </div>
+
+    <button (click)="submitOrder()">Submit Order</button>
+</div>
+<app-view-products></app-view-products>
