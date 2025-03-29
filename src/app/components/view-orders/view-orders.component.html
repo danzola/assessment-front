@@ -1,1 +1,5 @@
-<p>view-orders works!</p>
+<h1>Approach 1</h1>
+<div *ngFor="let product of products">
+    <h2>{{ product.name }}</h2>
+    <p>{{ product.price | currency }}</p>
+</div>
