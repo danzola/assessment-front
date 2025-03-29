@@ -60,7 +60,7 @@ export class CreateOrderComponent implements AfterViewInit {
   }
 
   submitOrder() {
-    this.ordersService.Create(this.order).subscribe();
+    this.ordersService.create(this.order).subscribe();
   }
 
 }

@@ -11,7 +11,7 @@ export class OrdersService {
 
   constructor(private http: HttpClient) { }
 
-  Create(input: any): Observable<any> {
+  create(input: any): Observable<any> {
     return this.http.post<any>(`${this.apiUrl}orders`, input);
   }
 }
